@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QRCE</string>
+    <string name="qrce">Quick Review for Computer Engineers</string>
+    <string name="short_qrce">QRCE</string>
+    <string name="android_qrce_app">Android QRCE App</string>
+    <string name="saying">Do study in better way</string>
+    <string name="tv_version">Version 1.0</string>
+</resources>
