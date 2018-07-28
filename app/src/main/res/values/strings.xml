@@ -11,4 +11,17 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark all read</string>
+    <string name="action_clear_all">Clear all</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_ntc">NTC</string>
+    <string name="nav_nea">NEA</string>
+    <string name="nav_loksewa">Loksewa</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="nav_settings">Settings</string>
 </resources>

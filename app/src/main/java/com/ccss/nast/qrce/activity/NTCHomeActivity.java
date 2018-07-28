@@ -1,7 +1,9 @@
-package com.ccss.nast.qrce;
+package com.ccss.nast.qrce.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.ccss.nast.qrce.R;
 
 public class NTCHomeActivity extends AppCompatActivity {
 

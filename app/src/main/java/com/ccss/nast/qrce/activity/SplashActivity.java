@@ -1,12 +1,15 @@
-package com.ccss.nast.qrce;
+package com.ccss.nast.qrce.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.widget.ProgressBar;
+
+import com.ccss.nast.qrce.R;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -22,6 +25,9 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         progressBar = (ProgressBar) findViewById(R.id.progress);
+
+        progressBar.getProgressDrawable().setColorFilter(
+                Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
 
         //Long operation by thread
         new Thread(new Runnable() {
@@ -44,7 +50,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 handler.post(new Runnable() {
                     public void run() {
-                        Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                     }
@@ -69,7 +75,7 @@ public class SplashActivity extends AppCompatActivity {
             super.setProgress(progress);
             if (progress == this.getMax()) {
                 //Do stuff when progress is max
-                Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         }
