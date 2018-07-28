@@ -17,5 +17,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onPause(){
         super.onPause();
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
     }
 }
