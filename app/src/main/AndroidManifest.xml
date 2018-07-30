@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.NTCHomeActivity" />
         <activity
             android:name=".activity.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -22,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AboutUsActivity"></activity>
+        <activity android:name=".activity.AboutUsActivity" />
+        <activity android:name=".activity.PrivacyPolicyActivity"></activity>
     </application>
 
 </manifest>

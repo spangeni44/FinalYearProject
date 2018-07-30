@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.ccss.nast.qrce.R;
 
-public class NTCHomeActivity extends AppCompatActivity {
+public class PrivacyPolicyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ntchome);
+        setContentView(R.layout.activity_privacy_policy);
     }
 }

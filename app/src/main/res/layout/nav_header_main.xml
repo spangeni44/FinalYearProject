@@ -27,13 +27,15 @@
             android:layout_width="@dimen/profile_width"
             android:layout_height="@dimen/profile_height"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            app:srcCompat="@android:drawable/sym_def_app_icon" />
- 
+            app:srcCompat="@drawable/qrce_small" />
+
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:text="@string/short_qrce"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
  
         <TextView
