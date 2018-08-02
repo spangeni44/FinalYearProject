@@ -9,10 +9,12 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -38,9 +40,16 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         setUpToolbar();
         NavigationView navigationView=findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
     }
     private void setUpToolbar() {
@@ -58,38 +67,78 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
              android.app.Fragment fragment;
              android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
              int id=item.getItemId();
+           //  String id=item.getTitle().toString();
              Toast.makeText(getApplicationContext(),"Item id= "+id,Toast.LENGTH_SHORT).show();
-             switch(id){
-                 case 0: {
+             switch(id) {
+                 case R.id.nav_home: {
                      fragment = new HomeFragment();
                      transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
                      break;
                  }
-                 case 1: {
+                 case R.id.nav_ntc: {
                      fragment = new NTCFragment();
                      transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
                      break;
                  }
-                 case 2:
+                 case R.id.nav_nea: {
                      fragment = new NEAFragment();
-                     transaction.replace(R.id.fl_main_frame,fragment);
+                     transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
                      break;
-
-                 default:{
-                     fragment=new HomeFragment();
-                     transaction.replace(R.id.fl_main_frame,fragment);
+                 }
+                 case R.id.nav_loksewa: {
+                     fragment = new LoksewaFragment();
+                     transaction.replace(R.id.fl_main_frame, fragment);
+                     transaction.addToBackStack(null);
+                     transaction.commit();
+                     break;
+                 }
+                 case R.id.nav_settings: {
+                     fragment = new SettingsFragment();
+                     transaction.replace(R.id.fl_main_frame, fragment);
+                     transaction.addToBackStack(null);
+                     transaction.commit();
+                     break;
+                 }
+                 case R.id.nav_about_us: {
+                    Intent aboutUsIntent=new Intent(Main2Activity.this,AboutUsActivity.class);
+                    startActivity(aboutUsIntent);
+                     break;
+                 }
+                 case R.id.nav_privacy_policy: {
+                     Intent privacyPolicyIntent=new Intent(Main2Activity.this,PrivacyPolicyActivity.class);
+                     startActivity(privacyPolicyIntent);
+                     break;
+                 }
+                 default: {
+                     fragment = new HomeFragment();
+                     transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
                      break;
                  }
              }
-        return false;
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public void onBackPressed(){
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
     }
 }
 

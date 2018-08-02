@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
+import android.view.Menu;
 import android.widget.ProgressBar;
 
+import com.ccss.nast.qrce.activity.Main2Activity;
 import com.ccss.nast.qrce.R;
 
 
@@ -50,7 +52,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 handler.post(new Runnable() {
                     public void run() {
-                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                        Intent intent = new Intent(SplashActivity.this, AboutUsActivity.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                     }
@@ -75,7 +77,7 @@ public class SplashActivity extends AppCompatActivity {
             super.setProgress(progress);
             if (progress == this.getMax()) {
                 //Do stuff when progress is max
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, AboutUsActivity.class);
                 startActivity(intent);
             }
         }
@@ -85,7 +87,7 @@ public class SplashActivity extends AppCompatActivity {
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items
 //        //to the action bar if it is present.
-//        getMenuInflater().inflate(R.Menu.activity_splash, menu);
+//        getMenuInflater().inflate(R.menu.main, menu);
 //        return true;
 //    }
 }

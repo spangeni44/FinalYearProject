@@ -25,9 +25,8 @@
     <string name="nav_home">Home</string>
     <string name="nav_ntc">NTC</string>
     <string name="nav_nea">NEA</string>
-    <string name="nav_loksewa">Loksewa</string>
+    <string name="nav_loksewa">LokSewa</string>
     <string name="nav_about_us">About Us</string>
-    <string name="privacy_policy">Privacy Policy</string>
     <string name="nav_settings">Settings</string>
     <string-array name="nav_item_activity_titles">
         <item>Home</item>
@@ -37,4 +36,5 @@
         <item>Settings</item>
     </string-array>
     <string name="title_activity_splash2">Splash2Activity</string>
+    <string name="nav_privacy_policy">Privacy Policy</string>
 </resources>
