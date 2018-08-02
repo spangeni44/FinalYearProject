@@ -9,9 +9,8 @@
         android:roundIcon="@drawable/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".activity.Main2Activity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:noHistory="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
@@ -22,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.AboutUsActivity" />
-        <activity android:name=".activity.PrivacyPolicyActivity"></activity>
+        <activity android:name=".activity.PrivacyPolicyActivity" />
+        <activity android:name=".activity.SplashActivity"></activity>
     </application>
 
 </manifest>

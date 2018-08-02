@@ -36,4 +36,5 @@
         <item>Loksewa</item>
         <item>Settings</item>
     </string-array>
+    <string name="title_activity_splash2">Splash2Activity</string>
 </resources>

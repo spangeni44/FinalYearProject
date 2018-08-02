@@ -5,19 +5,20 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="@string/nav_home" />
+            android:title="@string/nav_home"
+            />
         <item
             android:id="@+id/nav_ntc"
-            android:icon="@drawable/ntc"
+            android:icon="@mipmap/ic_ntc_foreground"
             android:title="@string/nav_ntc" />
         <item
             android:id="@+id/nav_nea"
-            android:icon="@drawable/nea"
+            android:icon="@mipmap/ic_nea_foreground"
             android:title="@string/nav_nea" />
  
         <item
             android:id="@+id/nav_loksewa"
-            android:icon="@drawable/ic_notifications_black_24dp"
+            android:icon="@mipmap/ic_loksewa_foreground"
             android:title="@string/nav_loksewa" />
  
         <item
