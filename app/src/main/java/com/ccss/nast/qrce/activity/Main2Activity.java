@@ -75,6 +75,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                      transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
+                     drawerLayout.closeDrawers();
                      break;
                  }
                  case R.id.nav_ntc: {
@@ -82,6 +83,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                      transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
+                     drawerLayout.closeDrawers();
                      break;
                  }
                  case R.id.nav_nea: {
@@ -89,6 +91,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                      transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
+                     drawerLayout.closeDrawers();
                      break;
                  }
                  case R.id.nav_loksewa: {
@@ -96,6 +99,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                      transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
+                     drawerLayout.closeDrawers();
                      break;
                  }
                  case R.id.nav_settings: {
@@ -103,6 +107,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                      transaction.replace(R.id.fl_main_frame, fragment);
                      transaction.addToBackStack(null);
                      transaction.commit();
+                     drawerLayout.closeDrawers();
                      break;
                  }
                  case R.id.nav_about_us: {
