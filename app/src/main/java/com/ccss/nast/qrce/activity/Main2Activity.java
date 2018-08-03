@@ -7,8 +7,9 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -28,7 +29,7 @@ import com.ccss.nast.qrce.fragment.NEAFragment;
 import com.ccss.nast.qrce.fragment.NTCFragment;
 import com.ccss.nast.qrce.fragment.SettingsFragment;
 
-public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -44,7 +45,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         setSupportActionBar(toolbar);
 
         setUpToolbar();
-        NavigationView navigationView=findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -52,6 +53,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
     }
+
     private void setUpToolbar() {
         drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar);
@@ -61,87 +63,84 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-         @Override
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-             android.app.Fragment fragment;
-             android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-             int id=item.getItemId();
-           //  String id=item.getTitle().toString();
-             Toast.makeText(getApplicationContext(),"Item id= "+id,Toast.LENGTH_SHORT).show();
-             switch(id) {
-                 case R.id.nav_home: {
-                     fragment = new HomeFragment();
-                     transaction.replace(R.id.fl_main_frame, fragment);
-                     transaction.addToBackStack(null);
-                     transaction.commit();
-                     drawerLayout.closeDrawers();
-                     break;
-                 }
-                 case R.id.nav_ntc: {
-                     fragment = new NTCFragment();
-                     transaction.replace(R.id.fl_main_frame, fragment);
-                     transaction.addToBackStack(null);
-                     transaction.commit();
-                     drawerLayout.closeDrawers();
-                     break;
-                 }
-                 case R.id.nav_nea: {
-                     fragment = new NEAFragment();
-                     transaction.replace(R.id.fl_main_frame, fragment);
-                     transaction.addToBackStack(null);
-                     transaction.commit();
-                     drawerLayout.closeDrawers();
-                     break;
-                 }
-                 case R.id.nav_loksewa: {
-                     fragment = new LoksewaFragment();
-                     transaction.replace(R.id.fl_main_frame, fragment);
-                     transaction.addToBackStack(null);
-                     transaction.commit();
-                     drawerLayout.closeDrawers();
-                     break;
-                 }
-                 case R.id.nav_settings: {
-                     fragment = new SettingsFragment();
-                     transaction.replace(R.id.fl_main_frame, fragment);
-                     transaction.addToBackStack(null);
-                     transaction.commit();
-                     drawerLayout.closeDrawers();
-                     break;
-                 }
-                 case R.id.nav_about_us: {
-                    Intent aboutUsIntent=new Intent(Main2Activity.this,AboutUsActivity.class);
-                    startActivity(aboutUsIntent);
-                     break;
-                 }
-                 case R.id.nav_privacy_policy: {
-                     Intent privacyPolicyIntent=new Intent(Main2Activity.this,PrivacyPolicyActivity.class);
-                     startActivity(privacyPolicyIntent);
-                     break;
-                 }
-                 default: {
-                     fragment = new HomeFragment();
-                     transaction.replace(R.id.fl_main_frame, fragment);
-                     transaction.addToBackStack(null);
-                     transaction.commit();
-                     break;
-                 }
-             }
+        Fragment fragment;
+        int id = item.getItemId();
+        //  String id=item.getTitle().toString();
+        Toast.makeText(getApplicationContext(), "Item id= " + id, Toast.LENGTH_SHORT).show();
+        switch (id) {
+            case R.id.nav_home: {
+                fragment = new HomeFragment();
+                loadFragment(fragment);
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.nav_ntc: {
+                fragment = new NTCFragment();
+                loadFragment(fragment);
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.nav_nea: {
+                fragment = new NEAFragment();
+                loadFragment(fragment);
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.nav_loksewa: {
+                fragment = new LoksewaFragment();
+                loadFragment(fragment);
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.nav_settings: {
+                fragment = new SettingsFragment();
+                loadFragment(fragment);
+                drawerLayout.closeDrawers();
+                break;
+            }
+            case R.id.nav_about_us: {
+                Intent aboutUsIntent = new Intent(Main2Activity.this, AboutUsActivity.class);
+                startActivity(aboutUsIntent);
+                break;
+            }
+            case R.id.nav_privacy_policy: {
+                Intent privacyPolicyIntent = new Intent(Main2Activity.this, PrivacyPolicyActivity.class);
+                startActivity(privacyPolicyIntent);
+                break;
+            }
+            default: {
+                fragment = new HomeFragment();
+//                transaction.replace(R.id.fl_main_frame, fragment);
+//                transaction.addToBackStack(null);
+//                transaction.commit();
+                break;
+            }
+        }
         return super.onOptionsItemSelected(item);
     }
 
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fl_main_frame, fragment).commit();
+    }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if(drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }else{
+        } else {
             super.onBackPressed();
         }
     }
