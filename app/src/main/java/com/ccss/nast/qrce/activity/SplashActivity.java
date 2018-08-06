@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
-import android.view.Menu;
 import android.widget.ProgressBar;
 
-import com.ccss.nast.qrce.activity.Main2Activity;
 import com.ccss.nast.qrce.R;
 
 
