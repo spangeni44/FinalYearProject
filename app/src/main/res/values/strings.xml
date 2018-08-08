@@ -37,4 +37,5 @@
     </string-array>
     <string name="title_activity_splash2">Splash2Activity</string>
     <string name="nav_privacy_policy">Privacy Policy</string>
+    <string name="c_programming">C Programming</string>
 </resources>
