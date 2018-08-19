@@ -12,62 +12,78 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
 
 import com.ccss.nast.qrce.R;
+import com.ccss.nast.qrce.helpers.GridSpacingItemDecoration;
 import com.ccss.nast.qrce.helpers.RecyclerViewAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MyListener{
+import butterknife.BindView;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MyListener {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
     private FloatingActionButton fab;
     List<String> strings;
-
-
-
+    TextView tv_header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-         strings=new ArrayList<>();
-            strings.add("C Programming");
-            strings.add("Basic Electrical");
-            strings.add("OOP in C++");
-            strings.add("Data Structures and Algorithms");
-            strings.add("Electronic Devices and Circuit");
-            strings.add("Logic Circuits");
-            strings.add("Database Management System");
-            strings.add("Microprocessor");
-            strings.add("C#");
-            strings.add("Java");
-            strings.add("Mathematics");
-            strings.add("Computer Graphics");
-            strings.add("Theory of Computation");
-            strings.add("Numerical Methods");
-            strings.add("Object Oriented Software Engineering");
-            strings.add("Data Communication");
-            strings.add("Simulation and Modeling");
-            strings.add("Embedded System");
-            strings.add("Operating System");
-            strings.add("Artificial Intelligence");
-            strings.add("Computer Networks");
-            strings.add("Digital Signal Processing");
-            strings.add("Information System");
-            strings.add("Social and Professional Issues in IT");
+        tv_header=findViewById(R.id.header);
+        tv_header.setText((R.string.nav_home));
+        strings = new ArrayList<>();
+//        strings = getResources().getStringArray(R.array.subjects);
+//
+//        setListAdapter(new ArrayAdapter<String>(this,
+//                android.R.layout.simple_list_item_checked, presidents));
+//    }
+        strings.add("C Programming");
+        strings.add("Basic Electrical");
+        strings.add("OOP in C++");
+        strings.add("Data Structures and Algorithms");
+        strings.add("Electronic Devices and Circuit");
+        strings.add("Logic Circuits");
+        strings.add("Database Management System");
+        strings.add("Microprocessor");
+        strings.add("C#");
+        strings.add("Java");
+        strings.add("Mathematics");
+        strings.add("Computer Graphics");
+        strings.add("Theory of Computation");
+        strings.add("Numerical Methods");
+        strings.add("Object Oriented Software Engineering");
+        strings.add("Data Communication");
+        strings.add("Simulation and Modeling");
+        strings.add("Embedded System");
+        strings.add("Operating System");
+        strings.add("Artificial Intelligence");
+        strings.add("Computer Networks");
+        strings.add("Digital Signal Processing");
+        strings.add("Information System");
+        strings.add("Social and Professional Issues in IT");
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView.LayoutManager layoutManager;
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(layoutManager);
+        int spanCount = 2;
+        int spacing = 8;
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount,spacing));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, strings);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
         recyclerView.setAdapter(adapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -152,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             default: {
                 drawerLayout.closeDrawers();
-  //              fragment = new HomeFragment();
+                //              fragment = new HomeFragment();
 //                transaction.replace(R.id.fl_main_frame, fragment);
 //                transaction.addToBackStack(null);
 //                transaction.commit();

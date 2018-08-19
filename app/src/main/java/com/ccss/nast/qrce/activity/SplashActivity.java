@@ -50,7 +50,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 handler.post(new Runnable() {
                     public void run() {
-                        Intent intent = new Intent(SplashActivity.this, AboutUsActivity.class);
+                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                     }
@@ -75,11 +75,10 @@ public class SplashActivity extends AppCompatActivity {
             super.setProgress(progress);
             if (progress == this.getMax()) {
                 //Do stuff when progress is max
-                Intent intent = new Intent(SplashActivity.this, AboutUsActivity.class);
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         }
-
     }
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {

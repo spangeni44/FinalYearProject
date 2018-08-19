@@ -11,7 +11,7 @@
         android:background="@android:color/holo_blue_dark"
         android:gravity="center"
         android:padding="@dimen/activity_horizontal_margin"
-        android:text="Header View"
+        android:text="@string/header_view"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textStyle="bold" />

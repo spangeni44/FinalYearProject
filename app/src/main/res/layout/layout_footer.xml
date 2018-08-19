@@ -11,7 +11,7 @@
         android:background="@android:color/holo_orange_dark"
         android:gravity="center"
         android:padding="@dimen/activity_horizontal_margin"
-        android:text="Footer View"
+        android:text="@string/QRCE_version_1"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textStyle="bold" />

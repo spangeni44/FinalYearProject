@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/dimen_8dp"
-            android:text="com.qrce.nast.qrce"
+            android:text="@string/website"
             />
  
     </LinearLayout>

@@ -7,12 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.ccss.nast.qrce.R;
 import com.ccss.nast.qrce.activity.MyListener;
-
 import java.util.List;
-
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     //    private static final int TYPE_HEADER = 0;
@@ -21,7 +18,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     MyListener myListener;
     private List<String> stringArrayList;
     private Activity activity;
-
     public RecyclerViewAdapter(MyListener myListener, List<String> strings) {
         this.myListener = myListener;
         this.stringArrayList = strings;
@@ -89,7 +85,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
         return TYPE_ITEM;
     }
-
     @Override
     public int getItemCount() {
         return stringArrayList.size();

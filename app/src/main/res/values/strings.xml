@@ -10,11 +10,7 @@
     <string name="android_qrce_app">Android QRCE App</string>
     <string name="saying">Do study in better way</string>
     <string name="tv_version">Version 1.0</string>
-
     <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-
     <string name="title_activity_splash">SplashActivity</string>
     <string name="action_logout">Logout</string>
     <string name="action_mark_all_read">Mark all read</string>
@@ -28,14 +24,49 @@
     <string name="nav_loksewa">LokSewa</string>
     <string name="nav_about_us">About Us</string>
     <string name="nav_settings">Settings</string>
-    <string-array name="nav_item_activity_titles">
-        <item>Home</item>
-        <item>NTC</item>
-        <item>NEA</item>
-        <item>Loksewa</item>
-        <item>Settings</item>
-    </string-array>
-    <string name="title_activity_splash2">Splash2Activity</string>
+    <string name="C_programming">C Programming</string>
+    <string name="sample_questions">Sample Questions</string>
+    <string name="test">Test</string>
+    <string name="exam_papers">Exam Papers</string>
+    <string name="QRCE_version_1">QRCE V1.0</string>
     <string name="nav_privacy_policy">Privacy Policy</string>
-    <string name="c_programming">C Programming</string>
+    <string name="header_view">Header View</string>
+    <string name="website">com.qrce.nast.qrce</string>
+    <string name="about_us_text"> This app is developed by: \n
+                    Suresh Pangeni \n
+                    Suresh Upreti \n
+                    Chandramani Bhandari \n
+                    Chakra Bahadur Singh \n
+                    Contact E-mail: qrce.nast.qrce.com \n
+                    Phone: +977-09100000 \n
+                    Address: Dhangadhi, Kailali,Farwest, Nepal \n
+    </string>
+
+    <string-array name="subjects">
+        <item>C Programming</item>
+        <item>Basic Electrical</item>
+        <item>OOP in C++</item>
+        <item>Data Structures and Algorithms</item>
+        <item>Electronic Devices and Circuit</item>
+        <item>Logic Circuits</item>
+        <item>OOP in C++</item>
+        <item>Data Structures and Algorithms</item>
+        <item>Database Management System</item>
+        <item>Microprocessor</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Mathematics</item>
+        <item>Theory of Computation</item>
+        <item>Numerical Methods</item>
+        <item>Object Oriented Software Engineering</item>
+        <item>"Data Communication</item>
+        <item>Simulation and Modeling</item>
+        <item>Embedded System</item>
+        <item>Operating System</item>
+        <item>Artificial Intelligence</item>
+        <item>Computer Networks</item>
+        <item>Digital Signal Processing</item>
+        <item>Information System</item>
+        <item>Social and Professional Issues in IT</item>
+    </string-array>
 </resources>
