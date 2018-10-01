@@ -19,10 +19,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.ccss.nast.qrce.R;
+import com.ccss.nast.qrce.fragment.Fragment1;
+import com.ccss.nast.qrce.fragment.Fragment2;
 import com.ccss.nast.qrce.helpers.GridSpacingItemDecoration;
 import com.ccss.nast.qrce.helpers.RecyclerViewAdapter;
 import java.util.ArrayList;
@@ -42,14 +47,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tv_header=findViewById(R.id.header);
-        tv_header.setText((R.string.nav_home));
-        strings = new ArrayList<>();
+//        tv_header=findViewById(R.id.header);
+//        tv_header.setText((R.string.nav_home));
+
 //        strings = getResources().getStringArray(R.array.subjects);
 //
 //        setListAdapter(new ArrayAdapter<String>(this,
 //                android.R.layout.simple_list_item_checked, presidents));
 //    }
+        strings = new ArrayList<>();
         strings.add("C Programming");
         strings.add("Basic Electrical");
         strings.add("OOP in C++");
@@ -179,9 +185,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadFragment(Fragment fragment) {
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fl_main_frame, fragment).commit();
+        LinearLayout frame=new LinearLayout(this);
+        fragmentTransaction.replace(frame.getId(),fragment);
+       // fragmentTransaction.add(R.id.fl_main_frame, fragment).commit();
     }
 
     @Override
@@ -202,11 +211,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onRecyclerViewItemClick(String type) {
-//        switch(type){
-//            case "C programming":{
-//
-//            }
-//        }
+        Intent intent=new Intent(getBaseContext(),QuestionsActivity.class);
+        intent.putExtra("SubjectType",type);
+
     }
 }
 

@@ -21,8 +21,8 @@ public class NEAActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nea);
-        tv_header=findViewById(R.id.header);
-        tv_header.setText((R.string.nav_nea));
+//        tv_header=findViewById(R.id.header);
+//        tv_header.setText((R.string.nav_nea));
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);

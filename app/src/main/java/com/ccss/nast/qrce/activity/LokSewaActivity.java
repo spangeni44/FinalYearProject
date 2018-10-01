@@ -12,7 +12,7 @@ public class LokSewaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lok_sewa);
-        tv_header=findViewById(R.id.header);
-        tv_header.setText((R.string.nav_loksewa));
+//        tv_header=findViewById(R.id.header);
+//        tv_header.setText((R.string.nav_loksewa));
     }
 }

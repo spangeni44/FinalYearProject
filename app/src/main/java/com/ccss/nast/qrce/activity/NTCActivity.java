@@ -12,7 +12,7 @@ public class NTCActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ntc);
-        tv_header=findViewById(R.id.header);
-        tv_header.setText((R.string.nav_ntc));
+//        tv_header=findViewById(R.id.header);
+//        tv_header.setText(("NTC"));
     }
 }

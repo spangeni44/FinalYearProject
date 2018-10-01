@@ -12,7 +12,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        tv_header=findViewById(R.id.header);
-        tv_header.setText((R.string.nav_settings));
+//        tv_header=findViewById(R.id.header);
+//        tv_header.setText((R.string.nav_settings));
     }
 }
